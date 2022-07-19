@@ -33,7 +33,6 @@ function App() {
         });
     }
     getProducts();
-    console.log(page);
   }, [setProducts, change, page, setPage])
 
   const sendProduct = e => {
@@ -62,7 +61,6 @@ function App() {
     }
     axios.post(url, jsonData)
       .then(function (response) {
-        console.log(response);
         makeChange('insert');
         setData({
           id: '',

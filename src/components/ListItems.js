@@ -2,7 +2,6 @@
 import Item from './Item';
 const ListItems = ({ products, deleteProduct, makeChange, setData, page,
     setPage }) => {
-    console.log(products.length);
     return (
         <div className="card">
             <div className="card-body">
