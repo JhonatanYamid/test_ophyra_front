@@ -18,7 +18,7 @@ function App() {
 
   useEffect(() => {
     const getProducts = async () => {
-      const url = `http://jhonatanalzate.000webhostapp.com/index.php/products/list`;
+      const url = `https://jhonatanalzate.000webhostapp.com/index.php/products/list`;
       let jsonData = {
         start: page,
         limit: 5
@@ -37,7 +37,7 @@ function App() {
 
   const sendProduct = e => {
     e.preventDefault();
-    let url = 'http://jhonatanalzate.000webhostapp.com/index.php/products/insert'
+    let url = 'https://jhonatanalzate.000webhostapp.com/index.php/products/insert'
     let jsonData = {
       price: parseInt(data.price),
       description: data.description,
@@ -47,7 +47,7 @@ function App() {
     if (change === 'update') {
       let text = "Seguro que desea actualizar el producto '" + data.title + "'?";
       if (window.confirm(text) === true) {
-        url = 'http://jhonatanalzate.000webhostapp.com/index.php/products/update'
+        url = 'https://jhonatanalzate.000webhostapp.com/index.php/products/update'
         jsonData = {
           id: data.id,
           price: parseInt(data.price),
