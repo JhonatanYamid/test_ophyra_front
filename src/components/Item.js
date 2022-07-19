@@ -19,7 +19,7 @@ const Item = ({ item: { id, title, description, image, price }, makeChange, setD
         setData({ id: id, description: description, image: image, price: price, title: title });
         makeChange('update');
     }
-    let thumb = (!image || image === '') ? 'without-image.jpg' : "http://localhost/test_ophyra_back/" + image
+    let thumb = (!image || image === '') ? 'without-image.jpg' : "https://test-ophyra-back.herokuapp.com/" + image
     return (
         <tr>
             <td><img src={thumb} className='img-thumbnail' alt="thumbnail" /></td>
