@@ -3,7 +3,7 @@ const Item = ({ item: { id, title, description, image, price }, makeChange, setD
     const deleteProduct = (id, title) => {
         let text = "Seguro que desea eliminar el producto '" + title + "'?";
         if (window.confirm(text) === true) {
-            axios.post('http://localhost/test_ophyra_back/index.php/products/delete', {
+            axios.post('http://jhonatanalzate.000webhostapp.com/index.php/products/delete', {
                 id: id
             })
                 .then(function (response) {
