@@ -18,12 +18,21 @@ function App() {
 
   useEffect(() => {
     const getProducts = async () => {
-      const url = `https://jhonatanalzate.000webhostapp.com/index.php/products/list`;
+      
+      const url = `https://test-ophyra-back.herokuapp.com/index.php/products/list`;
       let jsonData = {
         start: page,
         limit: 5
       }
-      axios.post(url, jsonData)
+      var config = {
+        method: 'post',
+        url: url, headers:{"Accept":"application/json, text/plain, /","Content-Type": "multipart/form-data"},
+           data : {
+            start: page,
+            limit: 5
+          }
+         };
+      axios.post(url, config)
         .then(function (response) {
           setProducts(response.data);
         })
@@ -37,7 +46,7 @@ function App() {
 
   const sendProduct = e => {
     e.preventDefault();
-    let url = 'https://jhonatanalzate.000webhostapp.com/index.php/products/insert'
+    let url = 'https://test-ophyra-back.herokuapp.com/index.php/products/insert'
     let jsonData = {
       price: parseInt(data.price),
       description: data.description,
@@ -47,7 +56,7 @@ function App() {
     if (change === 'update') {
       let text = "Seguro que desea actualizar el producto '" + data.title + "'?";
       if (window.confirm(text) === true) {
-        url = 'https://jhonatanalzate.000webhostapp.com/index.php/products/update'
+        url = 'https://test-ophyra-back.herokuapp.com/index.php/products/update'
         jsonData = {
           id: data.id,
           price: parseInt(data.price),
