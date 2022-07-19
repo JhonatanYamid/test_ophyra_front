@@ -24,15 +24,7 @@ function App() {
         start: page,
         limit: 5
       }
-      var config = {
-        method: 'post',
-        url: url, headers:{"Accept":"application/json, text/plain, /","Content-Type": "multipart/form-data"},
-           data : {
-            start: page,
-            limit: 5
-          }
-         };
-      axios.post(url, config)
+      axios.post(url, jsonData)
         .then(function (response) {
           setProducts(response.data);
         })
